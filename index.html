@@ -57,13 +57,13 @@
     <div class="container">
       <p class="eyebrow"><i class="ti ti-clock"></i> Jadwal sholat hari ini <span id="todayDate"></span></p>
       <div class="prayer-grid">
-        <div class="prayer-card"><span class="label">Subuh</span><span class="time">04:32</span></div>
-        <div class="prayer-card"><span class="label">Dzuhur</span><span class="time">11:52</span></div>
-        <div class="prayer-card"><span class="label">Ashar</span><span class="time">15:14</span></div>
-        <div class="prayer-card"><span class="label">Maghrib</span><span class="time">17:58</span></div>
-        <div class="prayer-card"><span class="label">Isya</span><span class="time">19:10</span></div>
+        <div class="prayer-card"><span class="label">Subuh</span><span class="time" data-prayer="Subuh">--:--</span></div>
+        <div class="prayer-card"><span class="label">Dzuhur</span><span class="time" data-prayer="Dzuhur">--:--</span></div>
+        <div class="prayer-card"><span class="label">Ashar</span><span class="time" data-prayer="Ashar">--:--</span></div>
+        <div class="prayer-card"><span class="label">Maghrib</span><span class="time" data-prayer="Maghrib">--:--</span></div>
+        <div class="prayer-card"><span class="label">Isya</span><span class="time" data-prayer="Isya">--:--</span></div>
       </div>
-      <p class="hint">Ganti angka di atas secara manual tiap hari, atau sambungkan ke API jadwal sholat (mis. Kemenag / Aladhan) — lihat catatan di <code>script.js</code>.</p>
+      <p class="hint" id="prayerSource">Memuat jadwal sholat…</p>
     </div>
   </section>
 
