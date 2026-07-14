@@ -1,1 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masjid Al Amanah GKN I Denpasar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <!-- ============ NAV ============ -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <i class="ti ti-building-mosque"></i>
+        <span>Masjid Al Amanah <small>GKN I Denpasar</small></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#beranda">Beranda</a>
+        <a href="#kajian">Kajian</a>
+        <a href="#artikel">Artikel</a>
+        <a href="#donasi">Donasi</a>
+        <a href="#profil">Profil</a>
+        <a href="#galeri">Galeri</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm" id="btnLogin">
+          <i class="ti ti-user-circle"></i> Login penulis
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+          <i class="ti ti-menu-2"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="beranda">
+    <div class="container hero-inner">
+      <i class="ti ti-building-mosque hero-icon"></i>
+      <h1>Masjid Al Amanah GKN I Denpasar</h1>
+      <p>Rumah ibadah, pusat ilmu, dan tempat berbagi kebaikan untuk umat di lingkungan GKN I Denpasar.</p>
+      <div class="hero-actions">
+        <a href="#donasi" class="btn btn-primary">Donasi sekarang</a>
+        <a href="#kajian" class="btn btn-ghost">Lihat jadwal kajian</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JADWAL SHOLAT ============ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow"><i class="ti ti-clock"></i> Jadwal sholat hari ini <span id="todayDate"></span></p>
+      <div class="prayer-grid">
+        <div class="prayer-card"><span class="label">Subuh</span><span class="time">04:32</span></div>
+        <div class="prayer-card"><span class="label">Dzuhur</span><span class="time">11:52</span></div>
+        <div class="prayer-card"><span class="label">Ashar</span><span class="time">15:14</span></div>
+        <div class="prayer-card"><span class="label">Maghrib</span><span class="time">17:58</span></div>
+        <div class="prayer-card"><span class="label">Isya</span><span class="time">19:10</span></div>
+      </div>
+      <p class="hint">Ganti angka di atas secara manual tiap hari, atau sambungkan ke API jadwal sholat (mis. Kemenag / Aladhan) — lihat catatan di <code>script.js</code>.</p>
+    </div>
+  </section>
+
+  <!-- ============ KAJIAN ============ -->
+  <section class="section alt" id="kajian">
+    <div class="container">
+      <p class="eyebrow"><i class="ti ti-calendar-event"></i> Kajian dan kegiatan mendatang</p>
+      <div class="list-card">
+        <div class="list-row">
+          <div>
+            <p class="title">Kajian Ba'da Maghrib: Fiqih Muamalah</p>
+            <p class="meta">Jumat, 17 Juli · Ustadz Ahmad Zaini</p>
+          </div>
+          <i class="ti ti-chevron-right"></i>
+        </div>
+        <div class="list-row">
+          <div>
+            <p class="title">Tahsin Al-Qur'an untuk Remaja</p>
+            <p class="meta">Sabtu, 18 Juli · Ustadzah Fitri</p>
+          </div>
+          <i class="ti ti-chevron-right"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARTIKEL ============ -->
+  <section class="section" id="artikel">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow"><i class="ti ti-notes"></i> Artikel dan tulisan terbaru</p>
+        <span class="lock-hint"><i class="ti ti-lock"></i> Posting khusus penulis terdaftar</span>
+      </div>
+
+      <div class="article-grid" id="articleGrid">
+        <article class="article-card">
+          <div class="article-thumb"><i class="ti ti-book"></i></div>
+          <div class="article-body">
+            <span class="tag">Akhlak</span>
+            <p class="title">Menjaga lisan di era media sosial</p>
+            <p class="meta">10 Juli 2026 · Ust. Ahmad Zaini</p>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-thumb"><i class="ti ti-book"></i></div>
+          <div class="article-body">
+            <span class="tag">Fiqih</span>
+            <p class="title">Panduan zakat mal bagi pekerja</p>
+            <p class="meta">6 Juli 2026 · Ustadzah Fitri</p>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-thumb"><i class="ti ti-book"></i></div>
+          <div class="article-body">
+            <span class="tag">Khutbah</span>
+            <p class="title">Teks khutbah Jumat: syukur nikmat</p>
+            <p class="meta">3 Juli 2026 · 8 menit baca</p>
+          </div>
+        </article>
+        <article class="article-card article-cta" id="btnWriteNew">
+          <i class="ti ti-plus"></i>
+          <p>Login untuk menulis artikel baru</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DONASI + PROFIL ============ -->
+  <section class="section alt" id="donasi">
+    <div class="container two-col">
+      <div class="info-card">
+        <i class="ti ti-heart-handshake"></i>
+        <p class="title">Donasi & infaq online</p>
+        <p class="desc">Renovasi tempat wudhu — terkumpul Rp 42.000.000 dari target Rp 80.000.000.</p>
+        <div class="progress"><div class="progress-bar" style="width:52%"></div></div>
+        <a href="#" class="btn btn-primary btn-block">Salurkan donasi</a>
+      </div>
+      <div class="info-card" id="profil">
+        <i class="ti ti-users"></i>
+        <p class="title">Profil & pengurus</p>
+        <p class="desc">Didirikan 1998. Dikelola oleh 12 pengurus DKM dan puluhan relawan.</p>
+        <a href="#" class="btn btn-block">Lihat profil lengkap</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALERI ============ -->
+  <section class="section" id="galeri">
+    <div class="container">
+      <p class="eyebrow"><i class="ti ti-photo"></i> Galeri kegiatan</p>
+      <div class="gallery-grid">
+        <div class="gallery-item"><i class="ti ti-photo"></i></div>
+        <div class="gallery-item"><i class="ti ti-photo"></i></div>
+        <div class="gallery-item"><i class="ti ti-photo"></i></div>
+        <div class="gallery-item"><i class="ti ti-photo"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Masjid Al Amanah GKN I Denpasar</p>
+    </div>
+  </footer>
+
+  <!-- ============ MODAL: LOGIN / DAFTAR ============ -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Tutup"><i class="ti ti-x"></i></button>
+
+      <div class="modal-tabs">
+        <button class="modal-tab active" data-tab="login">Login</button>
+        <button class="modal-tab" data-tab="register">Daftar penulis baru</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form class="modal-panel active" data-panel="login" id="loginForm">
+        <p class="modal-desc">Masuk dengan akun penulis yang sudah disetujui admin DKM.</p>
+        <label>Email</label>
+        <input type="email" placeholder="nama@email.com" required>
+        <label>Kata sandi</label>
+        <input type="password" placeholder="••••••••" required>
+        <p class="forgot">Lupa kata sandi?</p>
+        <button type="submit" class="btn btn-primary btn-block"><i class="ti ti-login"></i> Masuk</button>
+        <p class="modal-foot">Belum punya akun penulis? Klik tab "Daftar penulis baru".</p>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form class="modal-panel" data-panel="register" id="registerForm">
+        <p class="modal-desc">Isi data berikut untuk mengajukan akun penulis. Akun baru <strong>menunggu validasi admin DKM</strong> sebelum bisa digunakan.</p>
+        <label>Nama lengkap</label>
+        <input type="text" placeholder="Ahmad Zaini" required>
+        <label>Email</label>
+        <input type="email" placeholder="nama@email.com" required>
+        <label>No. WhatsApp</label>
+        <input type="text" placeholder="08xx xxxx xxxx" required>
+        <label>Kata sandi</label>
+        <input type="password" placeholder="••••••••" required>
+        <label>Peran / alasan mendaftar</label>
+        <input type="text" placeholder="Contoh: Ustadz pengisi kajian rutin" required>
+        <button type="submit" class="btn btn-primary btn-block"><i class="ti ti-send"></i> Ajukan pendaftaran</button>
+        <p class="modal-foot hourglass"><i class="ti ti-hourglass"></i> Notifikasi email dikirim setelah disetujui admin</p>
+      </form>
+
+      <!-- PENDING STATE (setelah submit daftar) -->
+      <div class="modal-panel" data-panel="pending" id="pendingPanel">
+        <div class="pending-box">
+          <i class="ti ti-clock-hour-4"></i>
+          <p class="title">Pendaftaran terkirim</p>
+          <p class="desc">Terima kasih, <span id="pendingName">nama Anda</span>. Pendaftaran akan diperiksa oleh admin DKM. Anda akan menerima email begitu akun disetujui.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
