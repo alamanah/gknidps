@@ -11,6 +11,47 @@ document.getElementById('todayDate').textContent = '— ' + new Date().toLocaleD
   day: 'numeric', month: 'long', year: 'numeric'
 });
 
+// ---------- Jadwal sholat otomatis (Aladhan API, metode Kemenag) ----------
+// Sumber: https://aladhan.com/prayer-times-api
+// method=20 -> Kemenag (Kementerian Agama Republik Indonesia)
+const PRAYER_CITY = 'Denpasar';
+const PRAYER_COUNTRY = 'Indonesia';
+const PRAYER_METHOD = 20;
+
+function formatDateForApi(d) {
+  const dd = String(d.getDate()).padStart(2, '0');
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const yyyy = d.getFullYear();
+  return `${dd}-${mm}-${yyyy}`;
+}
+
+async function loadPrayerTimes() {
+  const dateStr = formatDateForApi(new Date());
+  const url = `https://api.aladhan.com/v1/timingsByCity/${dateStr}?city=${encodeURIComponent(PRAYER_CITY)}&country=${encodeURIComponent(PRAYER_COUNTRY)}&method=${PRAYER_METHOD}`;
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Gagal mengambil data (' + res.status + ')');
+    const json = await res.json();
+    const t = json.data.timings;
+
+    document.querySelector('[data-prayer="Subuh"]').textContent = t.Fajr;
+    document.querySelector('[data-prayer="Dzuhur"]').textContent = t.Dhuhr;
+    document.querySelector('[data-prayer="Ashar"]').textContent = t.Asr;
+    document.querySelector('[data-prayer="Maghrib"]').textContent = t.Maghrib;
+    document.querySelector('[data-prayer="Isya"]').textContent = t.Isha;
+
+    document.getElementById('prayerSource').textContent =
+      `Jadwal otomatis dari Aladhan API (metode Kemenag) untuk ${PRAYER_CITY}, ${PRAYER_COUNTRY}.`;
+  } catch (err) {
+    console.error('Gagal memuat jadwal sholat:', err);
+    document.getElementById('prayerSource').textContent =
+      'Jadwal di atas belum berhasil diperbarui otomatis (koneksi ke Aladhan API gagal). Menampilkan waktu contoh — coba muat ulang halaman.';
+  }
+}
+
+loadPrayerTimes();
+
 // ---------- Menu mobile ----------
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
