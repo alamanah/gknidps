@@ -41,6 +41,6 @@ Alur yang disarankan:
 Beri tahu saya kalau mau saya lanjutkan sampai ke tahap ini (butuh pilih salah satu opsi backend di atas).
 
 ## Kustomisasi cepat
-- Ganti jadwal sholat manual tiap hari di `index.html` (bagian `.prayer-grid`), atau sambungkan ke API seperti Aladhan/Kemenag.
+- **Jadwal sholat sudah otomatis** — diambil dari [Aladhan API](https://aladhan.com/prayer-times-api) tiap kali halaman dibuka, memakai metode perhitungan **Kemenag** untuk kota **Denpasar, Indonesia**. Kalau masjidnya pindah kota, ganti `PRAYER_CITY` di bagian atas `script.js`. Kalau API gagal diakses, halaman otomatis menampilkan pesan status di bawah jadwal.
 - Ganti gambar galeri: ganti `<div class="gallery-item">` dengan `<img src="foto.jpg">`.
 - Warna utama ada di `style.css` bagian `:root` (`--green-700`, dst.) — ganti di satu tempat, seluruh situs ikut berubah.
