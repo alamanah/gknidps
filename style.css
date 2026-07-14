@@ -373,7 +373,7 @@ a { color: inherit; text-decoration: none; }
     display: none;
   }
   .main-nav.open { display: flex; }
-  .nav-toggle { display: block; }
+  .nav-toggle { display: flex; }
   .prayer-grid { grid-template-columns: repeat(3, 1fr); }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .hero h1 { font-size: 22px; }
